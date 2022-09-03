@@ -22,9 +22,9 @@
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse text-center" id="navbarText">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-            <li class="nav-item ">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav ">
+            <li class="nav-item">
               <a class="nav-link active text-center" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
@@ -33,8 +33,8 @@
             <li class="nav-item">
               <a class="nav-link text-center" href="#">Contact</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-center" href="{{route('login')}}">Login</a>
+            <li class="nav-item justify-content-end">
+              <a class="nav-link text-center justify-content-end" href="{{route('login')}}">Login</a>
             </li>
           </ul>
           <span class="navbar-text">
@@ -54,26 +54,27 @@
 
           </div>
           <div class="card-body">
-            <form class="row g-3">
+            <form class="row g-3" action="{{route('register.store')}}" method="POST">
+              @csrf
               <div class="col-12">
                 <label for="inputAddress" class="form-label">Name</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Name">
+                <input type="text" name="name" class="form-control" id="inputAddress" placeholder="Name">
               </div>
               <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
               </div>
               <div class="col-md-6">
                 <label for="inputPassword4" class="form-label">Password</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                <input type="password" name="password" class="form-control" id="inputPassword4" placeholder="Password">
               </div>
               <div class="col-12">
                 <label for="inputAddress" class="form-label">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Address">
+                <input type="text" name="address" class="form-control" id="inputAddress" placeholder="Address">
               </div>
               <div class="col-12">
                 <label for="inputAddress2" class="form-label">Phone</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Phone">
+                <input type="text" name="phone" class="form-control" id="inputAddress2" placeholder="Phone">
               </div>
 
               <div class="col-12">
@@ -86,7 +87,8 @@
       </div>
     </div>
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 
 </html>

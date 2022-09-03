@@ -16,11 +16,16 @@ Route::get('/dashboard', function () {
 })->name('dashboard');
 
 //login
-Route::get('login', [RegisterController::class, 'index'])->name('login');
-Route::post('post-login', [RegisterController::class, 'postLogin'])->name('login.post'); 
+Route::get('login', [RegisterController::class, 'login'])->name('login');
+Route::post('dologin', [RegisterController::class, 'doLogin'])->name('login.post'); 
 Route::get('registration', [RegisterController::class, 'registration'])->name('register');
-Route::post('post-registration', [RegisterController::class, 'postRegistration'])->name('register.post'); 
+Route::post('user-registration', [RegisterController::class, 'storeRegistration'])->name('register.store'); 
 
+Route::group(['middleware'=>['auth','user']],function (){
+    Route::get('/', function () {
+        return view('frontend.home');
+    })->name('register');
+  });
 // post
 Route::get('postList',[PostController::class,'showPostLists'])->name('post.list');
 Route::get('create',[PostController::class,'createPost'])->name('post.create');

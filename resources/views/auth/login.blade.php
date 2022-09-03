@@ -22,8 +22,8 @@
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse  justify-content-center" id="navbarText">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                <div class="collapse navbar-collapse  justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
                         <li class="nav-item ">
                             <a class="nav-link active text-center" aria-current="page" href="#">Home</a>
                         </li>
